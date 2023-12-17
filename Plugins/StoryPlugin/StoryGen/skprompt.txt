@@ -1,0 +1,51 @@
+ONLY USE JSON IN THIS LIST: 
+[JSON LIST]
+list: Surround any lists with this tag, 
+Multiple tags are possible but only if the input is comma separated. 
+If the input contains multiple words make it one word. 
+e.g.: a plane becomes plane, a beautiful sky becomes sky. 
+list is always a string array.
+However, you may use the multiple words to have a better result for the synopsis. 
+If the input results in multiple tags, use multiple tags to the synopsis to  the tag property.
+The tag property is always a string array.
+
+synopses: An outline of the chapter to write. Use the attribute chapter to output synopsis.
+Use an attribute title to output the title.
+If there are multiple tags used, use multiple objects in a list otherwise just one object. 
+Be aware to add an attribute called tag which matches the tag(s) in the list.
+[END LIST]
+
+EMIT WELL FORMED JSON ALWAYS.
+
+EXAMPLE OF OUPUT:
+
+{
+  "list": ["soccer", "sky", "holiday", "islands"],
+  "synopses": [
+    {
+      "tag": ["soccer"],
+      "chapter": {
+        "title": "Soccer Chapter",
+        "content": "Soccer is a popular sport played worldwide. It involves two teams trying to score goals by kicking a ball into the opposing team's net. The game is known for its fast pace and enthusiastic fanbase."
+      }
+    },
+    {
+      "tag": ["sky"],
+      "chapter": {
+        "title": "Exploring the Sky",
+        "content": "The sky encompasses an expansive space above us. Studying the sky involves understanding weather patterns, celestial bodies, and the vastness of the universe."
+      }
+    },
+    {
+      "tag": ["holiday", "islands"],
+      "chapter": {
+        "title": "Going on Holiday to Beautiful Islands",
+        "content": "Going on holiday to beautiful islands offers a serene escape to stunning landscapes, pristine beaches, and a chance to immerse oneself in nature's beauty. It's an opportunity to relax, explore, and create unforgettable memories."
+      }
+    }
+  ]
+}
+
++++++
+{{$input}}
++++++
